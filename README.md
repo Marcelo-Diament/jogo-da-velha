@@ -8,7 +8,7 @@ A seguir, vamos seguir esse passo a passo traduzido e simplificado:
 
 Reactjs passo a passo
 
-## 1. Criar um app react default e acessá-lo:
+## 01. Criar um app react default e acessá-lo:
 
 ``` sh
 npx create-react-app jogo-da-velha
@@ -16,21 +16,20 @@ cd jogo-da-velha
 npm start
 ```
 
-## 2. Apagar todos os arquivos da pasta src
-  
+## 02. Limpando nosso repositório
 
-## 3. Criar um arquivo index.css na pasta src
-  
+Esse passo é bem simples, basicamente vamos:
 
-## 4. Criar um arquivo index.js na pasta src
-  
+- Apagar todos os arquivos da pasta src
+- Criar um arquivo index.css na pasta src
+- Criar um arquivo index.js na pasta src
 
-## 5. Incluindo o código inicial nos arquivos
+## 03. Incluindo o código inicial nos arquivos
 
 Colar os respectivos códigos css e js do [CodePen](https://codepen.io/gaearon/pen/oWWQNa?editors=0100).
   
 
-## 6. Importando recursos
+## 04. Importando recursos
 
 Importar o React, ReactDOM e o nosso estilo adicionando as seguintes linhas ao topo do arquivo index.js:
 
@@ -40,15 +39,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 ```
 
-## 7. Extensão Babel JS para VS COde
+## 05. Extensão Babel JS para VS COde
 
 Vale também instalar a extensão Babel JavaScript no VS Code para facilitar a identificação dos elementos no código.
 
-## 8. Restartando
+## 06. Restartando
 
 Vamos derrubar o npm (Control C no terminal) e subir novamente ( `npm start` ).
 
-## 9. Props
+## 07. Props
 
 No index.js, no método renderSquare(), vamos passar o valor **i** para o componente Square através de uma `prop` chamada value (semelhante a um atributo de tag HTML):
 
@@ -63,7 +62,7 @@ renderSquare(i) {
 
 _Repare que o valor está sendo declarado entre chaves, e não entre aspas._
 
-## 10. Renderizando props
+## 08. Renderizando props
 
 Vamos renderizar as `props` do Square, substituindo `{ / * TODO * / }` por `{this.props.value}` (dentro do método render() do Square). Ficará assim:
 
@@ -90,7 +89,7 @@ Ao chamar esse método (dentro do `render()` do Square), estamos passando justam
 
 Por fim, na definição da classe Square, 'printamos' o valor da `prop` entre as tags de abertura e fechamento do `button` .
 
-## 11. Adicionando interatividade
+## 09. Adicionando interatividade
 
 Vamos adicionar um evento do tipo clique no `button` (Square):
 
@@ -126,7 +125,7 @@ Agora, se clicar num quadrado, verá justamente um `alert()` ser disparado com o
 
 > Obs.: repare que estamos passando uma função como `prop` . Se declarássemos apenas o `alert()` , ele seria disparado a cada renderização.
 
-## 12. Salvando valores com state
+## 10. Salvando valores com state
 
 > Nota: hoje há como usarmos `hooks` para manipularmos o `state` , mas nessa prática faremos da maneira mais 'roots', seguindo o tutorial do próprio React, por se tratar de um primeiro contato com essa lib/framework.
 
@@ -167,11 +166,11 @@ Depois dessas alterações, ao clicarmos em um quadrado ( `button` definido em `
 
 > Dica: é comum quebrarmos a linha de acordo com as `props` que temos, no caso `className` e `onClick` .
 
-## 13. Dica Extra: Extensão do React para Chrome ou Firefox
+## 11. Dica Extra: Extensão do React para Chrome ou Firefox
 
 Podemos usar uma extensão chamada React DevTools, que nos permite visualizar, por exemplo, os componentes no devtools. Basta instalarmos e acessarmos a aba Components.
 
-## 14. Movendo o `state` para o Board
+## 12. Movendo o `state` para o Board
 
 Vamos guardar o `state` de cada Square no próprio Board, que definirá se deverá aparecer um 'X' ou um 'O' mediante o clique no Square.
 
@@ -188,7 +187,7 @@ constructor(props) {
 }
 ```
 
-## 15. Fazendo o Square enxergar o seu `state` a partir do Board
+## 13. Fazendo o Square enxergar o seu `state` a partir do Board
 
 Antes o Square enxergava a `prop` . Depois mudamos para enxergar o `state` e preencher com um 'X'.
 
@@ -200,7 +199,7 @@ renderSquare(i) {
 }
 ```
 
-## 16. E precisamos fazer o array em Board enxergar as mudanças de `state` do Square
+## 14. E precisamos fazer o array em Board enxergar as mudanças de `state` do Square
 
 Para isso construiremos um método que lide com o clique no Square. Esse método vai se chamar `handleClick()` e deve receber a posição do Square (**i**). Primeiro vamos atrelar o método ao evento do tipo clique, dentro do método `renderSquare()` :
 
@@ -256,7 +255,7 @@ class Square extends React.Component {
 > No Board, definimos que, ao receber o clique, chamaremos o método `handleClick(i)`, passado do Board para o Square.
 > Agora definiremos a função `handleClick()`.
 
-## 17. Método `handleClick()`
+## 15. Método `handleClick()`
 
 Dentro do Board, após seu método construtor (e antes do `renderSquare()`), definiremos a função da seguinte maneira:
 
@@ -278,7 +277,7 @@ Por fim, atualizamos o `state` (com o método `setState()`), atrelando o valor d
 
 > Ao darmos essa 'volta', estamos evitando modificarmos o valor diretamente, estamos evitando a **mutação**, o que nos permitirá implementar as aplicações de modo mais simples e ainda nos dará acesso ao histórico do `state`. Além disso, ao evitarmos a mutação, conseguiremos detectar mudanças de forma mais simples. E, por fim, a **imutabilidade** nos dá melhores condições de sabermos quando um componente deve ser re-renderizado (através da detecção das mudanças). Mais informações sobre [Performance em React](https://pt-br.reactjs.org/docs/optimizing-performance.html#examples).
 
-## 18. Componente de Função
+## 16. Componente de Função
 
 Vamos transformar nosso Square em um componente de função - que não possuem `state` próprio, apenas o método `render()`, tornando-o mais simples:
 
@@ -294,7 +293,7 @@ function Square(props) {
 
 Repare que substituímos `this.props` por `props` e que o valor da prop 'onClick' agora está mais simples também.
 
-## 19. Alternando entre 'X' e 'O'
+## 17. Alternando entre 'X' e 'O'
 
 Por enquanto, só exibimos 'X' quando clicamos no Square, independentemente do 'turno' (do jogador). Vamos ajustar isso.
 
@@ -328,7 +327,7 @@ Também precisamos atualizar o status para informar qual o próximo jogador ('X'
 const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
 ```
 
-## 20. Temos um vencedor!
+## 18. Temos um vencedor!
 
 Para determinarmos o vencedor (e o fim do jogo), vamos usar a seguinte função auxiliar (devemos colá-la no final do arquivo):
 
