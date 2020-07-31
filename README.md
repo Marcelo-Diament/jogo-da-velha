@@ -17,16 +17,22 @@ npm start
 ```
 
 ## 2. Apagar todos os arquivos da pasta src
+  
 
 ## 3. Criar um arquivo index.css na pasta src
+  
 
 ## 4. Criar um arquivo index.js na pasta src
+  
 
 ## 5. Incluindo o código inicial nos arquivos
 
 Colar os respectivos códigos css e js do [CodePen](https://codepen.io/gaearon/pen/oWWQNa?editors=0100).
+  
 
-## 6. Importar o React, ReactDOM e o nosso estilo adicionando as seguintes linhas ao topo do arquivo index.js:
+## 6. Importando recursos
+
+Importar o React, ReactDOM e o nosso estilo adicionando as seguintes linhas ao topo do arquivo index.js:
 
 ``` js
 import React from 'react';
@@ -34,11 +40,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 ```
 
-## 7. Instalar a extensão Babel JavaScript no VS Code para facilitar a identificação dos elementos no código.
+## 7. Extensão Babel JS para VS COde
 
-## 8. Vamos derrubar o npm (Control C no terminal) e subir novamente ( `npm start` ).
+Vale também instalar a extensão Babel JavaScript no VS Code para facilitar a identificação dos elementos no código.
 
-## 9. No index.js, no método renderSquare(), vamos passar o valor **i** para o componente Square através de uma `prop` chamada value (semelhante a um atributo de tag HTML):
+## 8. Restartando
+
+Vamos derrubar o npm (Control C no terminal) e subir novamente ( `npm start` ).
+
+## 9. Props
+
+No index.js, no método renderSquare(), vamos passar o valor **i** para o componente Square através de uma `prop` chamada value (semelhante a um atributo de tag HTML):
 
 ``` js
 renderSquare(i) {
@@ -51,7 +63,9 @@ renderSquare(i) {
 
 _Repare que o valor está sendo declarado entre chaves, e não entre aspas._
 
-## 10. Vamos renderizar as `props` do Square, substituindo `{ / * TODO * / }` por `{this.props.value}` (dentro do método render() do Square). Ficará assim:
+## 10. Renderizando props
+
+Vamos renderizar as `props` do Square, substituindo `{ / * TODO * / }` por `{this.props.value}` (dentro do método render() do Square). Ficará assim:
 
 ``` js
 class Square extends React.Component {
