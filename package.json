@@ -1,5 +1,5 @@
 {
-  "name": "app-teste",
+  "name": "jogo-da-velha",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
