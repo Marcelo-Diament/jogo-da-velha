@@ -199,9 +199,9 @@ renderSquare(i) {
 }
 ```
 
-## 14. E precisamos fazer o array em Board enxergar as mudanças de `state` do Square
+## 14. Tornando mudanças de `state` visíveis
 
-Para isso construiremos um método que lide com o clique no Square. Esse método vai se chamar `handleClick()` e deve receber a posição do Square (**i**). Primeiro vamos atrelar o método ao evento do tipo clique, dentro do método `renderSquare()` :
+E precisamos fazer o array em Board enxergar as mudanças de `state` do Square. Para isso construiremos um método que lide com o clique no Square. Esse método vai se chamar `handleClick()` e deve receber a posição do Square (**i**). Primeiro vamos atrelar o método ao evento do tipo clique, dentro do método `renderSquare()` :
 
 ``` js
 onClick = {
